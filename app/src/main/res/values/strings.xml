@@ -12,4 +12,5 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="toast_button_text">Toast</string>
     <string name="hello_toast_text">Hello Toast!</string>
+    <string name="random_heading">Here is a number between 0 and %d.</string>
 </resources>

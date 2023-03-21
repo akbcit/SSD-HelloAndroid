@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.helloandroid.databinding.FragmentFirstBinding
 
@@ -35,7 +36,14 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.randomButton.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            // Get a reference to the text view
+            val showCountTextView = view.findViewById<TextView>(R.id.textview_first)
+            // Convert the text to an Int
+            val currentCount = showCountTextView.text.toString().toInt()
+            // Create an action that sends currentCount as an argument
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(currentCount)
+            // Find and use the nav controller to navigate using the action
+            findNavController().navigate(action)
         }
         binding.toastButton.setOnClickListener {
             // create a Toast with some text and display it for a short time
