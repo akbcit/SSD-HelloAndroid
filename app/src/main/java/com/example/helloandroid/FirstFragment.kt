@@ -1,6 +1,7 @@
 package com.example.helloandroid
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -71,6 +72,12 @@ class FirstFragment : Fragment() {
         // Convert the string to a number and increment it
         var count = countString.toInt()
         count++
+
+        // Output new value to console
+        println("Count is now $count")
+
+        // Use LogCat
+        Log.d("CountUpdated", " $count")
 
         // Display the new value
         showCountTextView.text = count.toString()
